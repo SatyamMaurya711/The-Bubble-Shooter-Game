@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+:root {
+  --bg--color: darkslateblue;
+  --primary--color: beige;
+  --secondary--color: #ea2264;
+  --top--panel: darksalmon;
+  --bubblecolor: darkorange;
+  --hovercolor: cyan;
+}
+
+.dark-theme {
+  --bg--color: #090040;
+  --primary--color: #c8acd6;
+  --secondary--color: #ea2264;
+  --top--panel: #0f828c;
+  --bubblecolor: yellow;
+  --hovercolor: #fff4b7;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/* Game On restart */
+.gameover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  height: 100%;
+}
+
+.restart-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--secondary--color);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.restart-btn:hover {
+  background-color: var(--hovercolor);
+  color: black;
+}
+
+/* ------------------------------------------- */
+
+/* Main Overlay */
+
+#main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg--color);
+}
+
+/* Panel Design Have Two Parts one is Ptop for game Details another is Pbottom for bubble */
+
+#panel {
+  overflow: hidden;
+  width: 90%;
+  height: 85%;
+  border-radius: 15px;
+  background-color: var(--primary--color);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--top--panel);
+  position: relative;
+}
+
+.header button {
+  position: absolute;
+  right: 30px;
+}
+
+.mainhead {
+  text-align: center;
+  padding: 10px 0px;
+  font-size: 30px;
+  font-weight: 700;
+  background: var(--top--panel);
+}
+
+#ptop {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 10%;
+  background-color: var(--top--panel);
+}
+
+.dashboard {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: aliceblue;
+  border-radius: 15px;
+}
+
+#pbottom {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+  padding: 2vw;
+  margin-bottom: 2vw;
+}
+
+.bubble {
+  width: 4vw; /* relative to screen width */
+  height: 4vw;
+  max-width: 50px; /* prevent it from getting too big */
+  max-height: 50px;
+  margin-bottom: 0;
+  font-size: 2vw;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bubblecolor);
+  font-weight: 500;
+  color: black;
+  transition: 0.3s ease;
+}
+
+.bubble:hover {
+  background-color: var(--hovercolor);
+  transform: scaleX(2) scaleY(2);
+}
+
+/* Responsiveness */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .bubble {
+    width: 8vw;
+    height: 8vw;
+    font-size: 3vw;
+  }
+
+  .mainhead {
+    font-size: 5vw;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 480px) {
+  .bubble {
+    width: 12vw;
+    height: 12vw;
+    font-size: 4vw;
+  }
+
+  #ptop {
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+    padding: 10px;
+  }
+
+  .dashboard h2 {
+    font-size: 4vw;
+  }
+
+  .box {
+    width: 8vw;
+    height: 8vw;
+    font-size: 3vw;
+  }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Bubble Game</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="main">
+      <div id="panel">
+        <div class="header">
+          <h2 class="mainhead">The Bubble Shooter</h2>
+          <button onclick="themeChange()">Change Theme</button>
+        </div>
+
+        <div id="ptop">
+          <div class="dashboard">
+            <h2>Hit</h2>
+            <div id="hit" class="box"></div>
+          </div>
+          <div class="dashboard">
+            <h2>Time</h2>
+            <div id="timer" class="box">60</div>
+          </div>
+          <div class="dashboard">
+            <h2>Score</h2>
+            <div id="score" class="box">0</div>
+          </div>
+        </div>
+
+        <div id="pbottom">
+          <div class="bubble">5</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Audio Files  -->
+    <audio
+      id="rightSound"
+      src="./audio file/Right Ans.wav"
+      preload="auto"
+    ></audio>
+    <audio
+      id="wrongSound"
+      src="./audio file/Wrong Ans.mp3"
+      preload="auto"
+    ></audio>
+
+    <script src="./App.js"></script>
+  </body>
+</html>
